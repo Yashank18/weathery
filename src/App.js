@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
      <WeatherCard/>
-      4 hours data
     </div>
   );
 }

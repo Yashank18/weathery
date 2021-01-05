@@ -21,3 +21,24 @@
     border:0px solid;
     margin-right: 20px;
 }
+.leftArea{
+    background-image: url(https://images.unsplash.com/photo-1559060017-445fb9722f2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 40vw;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+.leftArea-inside{
+    position: relative;
+    top: 40%;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.rightArea{
+    width: 100%;
+    background: linear-gradient(90deg, rgb(249, 157, 149) 20%, rgb(218, 107, 115) 50%, rgb(207, 99, 103) 100%);
+}

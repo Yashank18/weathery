@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import axios from '../../Axios-weather'
-import './Weather.css'
+import './Weather.css';
+
+import CardArea from '../CardArea/CardArea';
+import SearchArea from '../SearchArea/SearchArea'
 class Weather extends Component{
     state={
         temperature:35,
@@ -27,13 +30,19 @@ class Weather extends Component{
     }
     render(){
         return(
-            <div>
-                <h1 className="Temp">{this.state.temperature}* C</h1>
-        <h3>{this.state.description}</h3>
-                <form className="myForm">
-                    <input type="text" placeholder="City" onChange={this.handleChange}></input>
-                    <button onClick={this.getTemp}>Search</button>
-                </form>
+            <div style={{display:"flex"}}>
+                <div className="leftArea">
+                    <div className="leftArea-inside">
+                        <SearchArea/>
+                    </div>
+                </div>
+                <div className="rightArea">
+                    <div className="rightArea-inside">
+                        <CardArea />
+                    </div>
+                    
+                </div>
+                
             </div>
         )
     }
