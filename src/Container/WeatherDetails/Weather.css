@@ -1,0 +1,23 @@
+.Temp{
+    color:white;
+   padding-top:15%;
+   font-size:55px;
+}
+.myForm{
+    align-content: center;
+}
+.myForm input{
+    outline:none;
+    padding:10px;
+    border-radius: 20px;
+    border:0px solid;
+    margin-right: 20px;
+}
+
+.myForm button{
+    outline:none;
+    background-color: lightblue;
+    padding: 8px 15px;
+    border:0px solid;
+    margin-right: 20px;
+}
