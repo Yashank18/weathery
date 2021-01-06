@@ -2,7 +2,7 @@
     height: 25vh;
     width: 20vh;
     background-color: white;
-    margin: 0px 25px;
+    margin: 10px 25px;
     transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px, rgba(128, 128, 128, 0.1) 0px 0px 40px inset;
 }

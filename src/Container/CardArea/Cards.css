@@ -1,4 +1,9 @@
 .cards{
     display: flex;
-    padding: 10vh;
+    margin: 10vh;
 }
+@media only screen and (max-width: 1020px) {
+    .cards {
+      flex-wrap: wrap;
+    }
+  }

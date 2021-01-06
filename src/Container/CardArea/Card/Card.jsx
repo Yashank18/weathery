@@ -37,11 +37,13 @@ function Card(props){
     else if(icon_code>803)
         icon=clouds
 
+    else 
+    icon=sunny;
     return (
     <div className="card">
-        <h5>{props.data?.datetime}</h5>
+        <h5>{props.data?.datetime!=null?props.data?.datetime : "--/--"}</h5>
         <img alt="temp" height="70px" src={icon}/>
-        <h3>{props.data?.max_temp}</h3>
+        <h3>{props.data?.max_temp!=null?props.data?.max_temp:"--/--"}</h3>
     </div>
     )
 }

@@ -46,3 +46,14 @@
     align-items: flex-start;
     justify-content: space-evenly;
 }
+.main{
+    display: flex;
+}
+@media only screen and (max-width: 1020px) {
+    .main {
+      flex-wrap: wrap;
+    }
+    .leftArea{
+        width: 100vh;
+    }
+  }

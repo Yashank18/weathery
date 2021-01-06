@@ -38,7 +38,7 @@ class Weather extends Component{
     }
     render(){
         return(
-            <div style={{display:"flex"}}>
+            <div className="main">
                 <div className="leftArea">
                     <div className="leftArea-inside">
                         <div className="myForm">
