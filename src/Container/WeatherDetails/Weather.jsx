@@ -3,43 +3,55 @@ import axios from '../../Axios-weather'
 import './Weather.css';
 
 import CardArea from '../CardArea/CardArea';
-import SearchArea from '../SearchArea/SearchArea'
+
 class Weather extends Component{
-    state={
-        temperature:35,
-        city:'Jind',
-        description:null
+    constructor(){
+        super();
+        this.state={
+            temperature:35,
+            city:'',
+            weekly:[]
+        }
+        this.getTemp=this.getTemp.bind(this);
+        this.handleChange=this.handleChange.bind(this);
     }
-    handleChange=(event)=>{
+    
+    handleChange(event){
         this.setState({city:event.target.value});
         console.log(this.state.city)
     }
-    getTemp=(event)=>{
-        event.preventDefault();
-        axios.get('/weather?q='+this.state.city+'&appid=4dff1e6ae5b8615562525cb662cd9f4d')
+    getTemp(){
+        axios.get('daily?city='+this.state.city+'&key=da0d9a5e7c5543fca0589ef833678dfd')
         .then(resposnse=>{
-            let tempp=resposnse.data.main.temp;
-            tempp=tempp-273;
-            tempp=tempp.toFixed(2)
-            this.setState({temperature:tempp,description:resposnse.data.weather[0].description})
+            let tempp=resposnse.data.data;
+            console.log(resposnse.data)
+            this.setState({
+                ...this.state,
+                temperature:tempp[0].app_max_temp,
+                weekly:tempp
+            })
         })
         .catch(error=>{
-            this.setState({error:true})
+            console.log(error)
         });
-        console.log(this.state.temperature);
+        console.log(this.state.weekly);
     }
     render(){
         return(
             <div style={{display:"flex"}}>
                 <div className="leftArea">
                     <div className="leftArea-inside">
-                        <SearchArea/>
+                        <div className="myForm">
+                            <h4>Search weather on your city</h4>
+                            <input type="text" placeholder="City" onChange={this.handleChange} ></input>
+                            <button onClick={this.getTemp}>Search</button>
+                        </div>
                     </div>
                 </div>
                 <div className="rightArea">
                     <div className="rightArea-inside">
-                        <h1>Hey</h1>
-                        <CardArea />
+                        <h1>{this.state.city}</h1>
+                        <CardArea weekdata={this.state.weekly}/>
                     </div>
                     
                 </div>
