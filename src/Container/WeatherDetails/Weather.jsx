@@ -38,6 +38,7 @@ class Weather extends Component{
                 </div>
                 <div className="rightArea">
                     <div className="rightArea-inside">
+                        <h1>Hey</h1>
                         <CardArea />
                     </div>
                     

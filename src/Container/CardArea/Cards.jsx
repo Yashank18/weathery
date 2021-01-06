@@ -1,9 +1,17 @@
 import React from 'react';
+import './Cards.css'
 
-function Cards(){
+//import for Card
+import Card from './Card/Card';
+
+function Cards(props){
     return(
-        <div>
-            
+        <div className="cards">
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
         </div>
     )
 }
