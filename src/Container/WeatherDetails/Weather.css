@@ -46,6 +46,9 @@
     align-items: flex-start;
     justify-content: space-evenly;
 }
+.rightArea h1{
+    color: white;
+}
 .main{
     display: flex;
 }

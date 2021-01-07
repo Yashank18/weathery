@@ -10,6 +10,7 @@ class Weather extends Component{
         this.state={
             temperature:35,
             city:'',
+            searchedCity:'',
             weekly:[]
         }
         this.getTemp=this.getTemp.bind(this);
@@ -17,18 +18,18 @@ class Weather extends Component{
     }
     
     handleChange(event){
-        this.setState({city:event.target.value});
-        console.log(this.state.city)
+        this.setState({searchedCity:event.target.value});
     }
     getTemp(){
-        axios.get('daily?city='+this.state.city+'&key=da0d9a5e7c5543fca0589ef833678dfd')
+        axios.get('daily?city='+this.state.searchedCity+'&key=da0d9a5e7c5543fca0589ef833678dfd')
         .then(resposnse=>{
             let tempp=resposnse.data.data;
             console.log(resposnse.data)
             this.setState({
                 ...this.state,
                 temperature:tempp[0].app_max_temp,
-                weekly:tempp
+                weekly:tempp,
+                city:this.state.searchedCity
             })
         })
         .catch(error=>{
@@ -50,7 +51,7 @@ class Weather extends Component{
                 </div>
                 <div className="rightArea">
                     <div className="rightArea-inside">
-                        <h1>{this.state.city}</h1>
+                        <h1>📍 {this.state.city}</h1>
                         <CardArea weekdata={this.state.weekly}/>
                     </div>
                     

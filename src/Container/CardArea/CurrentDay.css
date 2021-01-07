@@ -1,0 +1,15 @@
+.current{
+    height:35vh;
+    background-color:white;
+    margin:0px 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.current-inside{
+    display: flex;
+    flex-direction: column;
+}
+.current-inside h1{
+    color: black;
+}

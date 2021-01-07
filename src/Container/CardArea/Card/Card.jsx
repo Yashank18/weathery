@@ -1,13 +1,13 @@
 import React from 'react';
 
 // Import for images
-import sunny from '../../../Assets/sun.png';
-import clouds from '../../../Assets/clouds.png';
-import heavyRain from '../../../Assets/heavy_rain.png';
-import thunder from '../../../Assets/thunder.png';
-import snow from '../../../Assets/snow.png';
-import mist from '../../../Assets/mist.png';
-import sunWithClouds from '../../../Assets/sun_withClouds.png'
+import sunny from '../../../Assets/sunny.gif';
+import clouds from '../../../Assets/cloud.gif';
+import heavyRain from '../../../Assets/rain.gif';
+import thunder from '../../../Assets/thunder.gif';
+import snow from '../../../Assets/snow.gif';
+import mist from '../../../Assets/mist.gif';
+import sunWithClouds from '../../../Assets/sun_withClouds.gif'
 
 // import css
 import './Card.css';
@@ -41,9 +41,10 @@ function Card(props){
     icon=sunny;
     return (
     <div className="card">
-        <h5>{props.data?.datetime!=null?props.data?.datetime : "--/--"}</h5>
-        <img alt="temp" height="70px" src={icon}/>
-        <h3>{props.data?.max_temp!=null?props.data?.max_temp:"--/--"}</h3>
+        <h6>{props.data?.datetime!=null?props.data?.datetime : "--/--"}</h6>
+        <img alt="temp" height="60px" src={icon}/>
+        <h4>{props.data?.min_temp!=null?props.data?.min_temp:"--/--"}</h4>
+        <h5>{props.data?.min_temp!=null?props.data?.weather.description:""}</h5>
     </div>
     )
 }
